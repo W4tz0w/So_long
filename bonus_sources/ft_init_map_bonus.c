@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:54 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:07:03 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:20:58 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_verif_args(int argc, char **argv, t_game *game)
 		ft_error_msg("Pour rappel, la map doit être au format .ber", game);
 	if (ft_strnstr(&argv[1][map_argv_len - 21], "parallel_universe.ber", 21))
 		ft_parallel_universe(game);
-	else 
+	else
 		ft_sprite_path(game);
 }
 
