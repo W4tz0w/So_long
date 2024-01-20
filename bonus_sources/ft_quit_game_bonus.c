@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_quit_game.c                                     :+:      :+:    :+:   */
+/*   ft_quit_game_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:12 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:44 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 01:48:27 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	ft_victory(t_game *game);
 int	ft_quit_game(t_game *game);

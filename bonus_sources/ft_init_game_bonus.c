@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_game.c                                     :+:      :+:    :+:   */
+/*   ft_init_game_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:09 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:34 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:11:01 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_init_vars(t_game *game);
 void	ft_init_mlx(t_game *game);
@@ -50,18 +50,18 @@ void	ft_init_sprites(t_game *game)
 	void	*mlx;
 
 	mlx = game->mlx_ptr;
-	game->wall = ft_new_sprite(mlx, WALL_XPM, game);
-	game->floor = ft_new_sprite(mlx, FLOOR_XPM, game);
-	game->coins1 = ft_new_sprite(mlx, COINS_1_XPM, game);
-	game->coins2 = ft_new_sprite(mlx, COINS_2_XPM, game);
-	game->coins3 = ft_new_sprite(mlx, COINS_3_XPM, game);
-	game->coins4 = ft_new_sprite(mlx, COINS_4_XPM, game);
-	game->p_front = ft_new_sprite(mlx, P_FRONT_XPM, game);
-	game->p_left = ft_new_sprite(mlx, P_LEFT_XPM, game);
-	game->p_right = ft_new_sprite(mlx, P_RIGHT_XPM, game);
-	game->p_back = ft_new_sprite(mlx, P_BACK_XPM, game);
-	game->open_exit = ft_new_sprite(mlx, OPEN_EXIT_XPM, game);
-	game->exit_closed = ft_new_sprite(mlx, EXIT_CLOSED_XPM, game);
+	game->wall = ft_new_sprite(mlx, game->xpm.wall_xpm, game);
+	game->floor = ft_new_sprite(mlx, game->xpm.floor_xpm, game);
+	game->coins1 = ft_new_sprite(mlx, game->xpm.coins1_xpm, game);
+	game->coins2 = ft_new_sprite(mlx, game->xpm.coins2_xpm, game);
+	game->coins3 = ft_new_sprite(mlx, game->xpm.coins3_xpm, game);
+	game->coins4 = ft_new_sprite(mlx, game->xpm.coins4_xpm, game);
+	game->p_front = ft_new_sprite(mlx, game->xpm.front_xpm, game);
+	game->p_left = ft_new_sprite(mlx, game->xpm.left_xpm, game);
+	game->p_right = ft_new_sprite(mlx, game->xpm.right_xpm, game);
+	game->p_back = ft_new_sprite(mlx, game->xpm.back_xpm, game);
+	game->open_exit = ft_new_sprite(mlx, game->xpm.exit_open_xpm, game);
+	game->exit_closed = ft_new_sprite(mlx, game->xpm.exit_closed_xpm, game);
 }
 
 t_image	ft_new_sprite(void *mlx, char *path, t_game *game)

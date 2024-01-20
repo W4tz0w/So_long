@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_key_hook.c                                      :+:      :+:    :+:   */
+/*   ft_key_hook_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:31 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:39 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 01:48:25 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int		ft_key_hook(int keysym, t_game *game);
 void	ft_p_move(t_game *game, int x, int y, int p_sprite);

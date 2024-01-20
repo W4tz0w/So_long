@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_map.c                                      :+:      :+:    :+:   */
+/*   ft_init_map_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:54 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:05:35 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:07:03 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_verif_args(int argc, char **argv, t_game *game);
 void	ft_init_map(t_game *game, char *argv);
@@ -18,7 +18,7 @@ void	ft_check_for_empty_line(char *map, t_game *game);
 
 void	ft_verif_args(int argc, char **argv, t_game *game)
 {
-	int	map_argv_len;
+	int		map_argv_len;
 
 	game->map_alloc = false;
 	if (argc > 2)
@@ -28,6 +28,10 @@ void	ft_verif_args(int argc, char **argv, t_game *game)
 	map_argv_len = ft_strlen(argv[1]);
 	if (!ft_strnstr(&argv[1][map_argv_len - 4], ".ber", 4))
 		ft_error_msg("Pour rappel, la map doit être au format .ber", game);
+	if (ft_strnstr(&argv[1][map_argv_len - 21], "parallel_universe.ber", 21))
+		ft_parallel_universe(game);
+	else 
+		ft_sprite_path(game);
 }
 
 void	ft_init_map(t_game *game, char *argv)
@@ -70,7 +74,7 @@ void	ft_check_for_empty_line(char *map, t_game *game)
 	else if (map[ft_strlen(map) - 1] == '\n')
 	{
 		free (map);
-		ft_error_msg("La carte comporte une ligne vide à la fin...bro.", game);
+		ft_error_msg("La carte comporte une ligne vide à la fin...BRO.", game);
 	}
 	while (map[i + 1])
 	{

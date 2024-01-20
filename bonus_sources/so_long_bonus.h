@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:57 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 03:11:08 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include <unistd.h>
 # include <stdio.h>
@@ -51,19 +51,6 @@
 # define RIGHT				3
 # define BACK				4
 
-# define WALL_XPM			"assets/solal/wall.xpm"
-# define FLOOR_XPM			"assets/solal/floor.xpm"
-# define COINS_1_XPM		"assets/solal/coin_1.xpm"
-# define COINS_2_XPM		"assets/solal/coin_2.xpm"
-# define COINS_3_XPM		"assets/solal/coin_3.xpm"
-# define COINS_4_XPM		"assets/solal/coin_4.xpm"
-# define P_FRONT_XPM		"assets/solal/player/front.xpm"
-# define P_LEFT_XPM			"assets/solal/player/left.xpm"
-# define P_RIGHT_XPM		"assets/solal/player/right.xpm"
-# define P_BACK_XPM			"assets/solal/player/back.xpm"
-# define OPEN_EXIT_XPM		"assets/solal/exit-open.xpm"
-# define EXIT_CLOSED_XPM	"assets/solal/exit-closed.xpm"
-
 # define GREEN				"\033[0;32m"
 # define RED 				"\033[1;31m"
 # define GREY 				"\033[0;90m"
@@ -100,12 +87,29 @@ typedef struct s_map
 	t_positon	player;
 }	t_map;
 
+typedef struct s_xpm
+{
+	char	*wall_xpm;
+	char	*floor_xpm;
+	char	*coins1_xpm;
+	char	*coins2_xpm;
+	char	*coins3_xpm;
+	char	*coins4_xpm;
+	char	*front_xpm;
+	char	*right_xpm;
+	char	*left_xpm;
+	char	*back_xpm;
+	char	*exit_open_xpm;
+	char	*exit_closed_xpm;
+}	t_xpm;
+
 typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
 	int			movements;
 	int			p_sprite;
+	int			parallel_uni;
 	t_map		map;
 	t_bool		map_alloc;
 	t_image		wall;
@@ -120,6 +124,7 @@ typedef struct s_game
 	t_image		p_left;
 	t_image		p_right;
 	t_image		p_back;
+	t_xpm		xpm;
 }	t_game;
 
 void	ft_verif_args(int argc, char **argv, t_game *game);
@@ -151,5 +156,7 @@ int		ft_quit_game(t_game *game);
 void	ft_free_all_game(t_game *game);
 void	ft_destroy_images(t_game *game);
 void	ft_free_game(t_game *game);
+void	ft_sprite_path(t_game *game);
+void	ft_parallel_universe(t_game *game);
 
 #endif

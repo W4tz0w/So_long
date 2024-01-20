@@ -6,7 +6,7 @@
 #    By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 17:28:03 by daddy_cool        #+#    #+#              #
-#    Updated: 2024/01/17 17:28:05 by daddy_cool       ###   ########.fr        #
+#    Updated: 2024/01/20 16:07:16 by daddy_cool       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ MLX_DIR = ./libraries/mlx
 LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a
 
 SRCS_DIR = ./sources/
+BONUS_SRCS_DIR = ./bonus_sources/
 
 SRCS = $(addprefix $(SRCS_DIR), \
 		so_long.c			\
@@ -30,10 +31,22 @@ SRCS = $(addprefix $(SRCS_DIR), \
 		ft_render_game.c		\
 		ft_utils.c)
 
+BONUS_SRCS = $(addprefix $(BONUS_SRCS_DIR), \
+		so_long_bonus.c			\
+		ft_verif_map_bonus.c		\
+		ft_quit_game_bonus.c		\
+		ft_free_mem_bonus.c	\
+		ft_key_hook_bonus.c	\
+		ft_init_game_bonus.c		\
+		ft_init_map_bonus.c		\
+		ft_render_game_bonus.c		\
+		ft_utils_bonus.c)
+
 OBJS = $(SRCS:%.c=%.o)
+BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 LDFLAGS = -L$(LIBFT_DIR) -L$(MLX_DIR)
 LDLIBS = -lft -lmlx -framework OpenGL -framework AppKit
 
@@ -45,7 +58,13 @@ $(NAME): $(OBJS)
 	make -C $(LIBFT_DIR)
 	make -C $(MLX_DIR)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -o $@ $^
-	@echo "\033[0;32m$(NAME) compiled successfully!\033[0m"
+	@echo "\033[0;32mÇa commence déjà bien, $(NAME) compile!\033[0m"
+
+bonus: $(BONUS_OBJS)
+	make -C $(LIBFT_DIR)
+	make -C $(MLX_DIR)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(LDLIBS) -o $(NAME)_bonus $^
+	@echo "\033[0;32mBonus, c'est parti youpi-youpla-boum!$(NAME)_bonus compile!\033[0m"
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -53,13 +72,13 @@ $(NAME): $(OBJS)
 clean:
 	make -C $(LIBFT_DIR) clean
 	make -C $(MLX_DIR) clean
-	$(RM) $(OBJS)
-	@echo "\033[0;32mCleaned up object files!\033[0m"
+	$(RM) $(OBJS) $(BONUS_OBJS)
+	@echo "\033[0;32m*.o virés, chef!\033[0m"
 
 fclean: clean
 	make -C $(LIBFT_DIR) fclean
-	$(RM) $(NAME)
-	@echo "\033[0;32mCleaned up $(NAME)!\033[0m"
+	$(RM) $(NAME) $(NAME)_bonus
+	@echo "\033[0;32mC'est bon. $(NAME) est fcleanupé.\033[0m"
 
 re: fclean all
 

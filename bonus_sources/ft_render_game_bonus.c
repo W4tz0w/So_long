@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_render_game.c                                   :+:      :+:    :+:   */
+/*   ft_render_game_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:59 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:33:29 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 01:48:30 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int		ft_render_game(t_game *game);
 void	ft_identify_sprite(t_game *game, int x, int y);
@@ -86,5 +86,22 @@ void	ft_render_sprite(t_game *game, t_image sprite, int line, int column)
 
 void	ft_print_movements(t_game *game)
 {
-	ft_printf("Movements = %d\n", game->movements);
+	char			*movements;
+	char			*str;
+	static int		i;
+
+	movements = ft_itoa(game->movements);
+	str = ft_strjoin("Movements : ", movements);
+	if (i == 1)
+	{
+		mlx_string_put(game->mlx_ptr, game->win_ptr, 42, 21, 999999999, str);
+		i--;
+	}
+	else if (i == 0)
+	{
+		mlx_string_put(game->mlx_ptr, game->win_ptr, 42, 21, 0, str);
+		i++;
+	}
+	free(movements);
+	free(str);
 }

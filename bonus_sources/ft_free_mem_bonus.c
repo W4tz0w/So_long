@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mem.c                                      :+:      :+:    :+:   */
+/*   ft_free_mem_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:24 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:30 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 01:48:07 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	ft_free_all_game(t_game *game);
 void	ft_destroy_images(t_game *game);
