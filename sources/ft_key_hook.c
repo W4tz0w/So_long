@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:31 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:39 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:39:51 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	ft_p_move(t_game *game, int new_y, int new_x, int p_sprite)
 		game->map.player.y = new_y;
 		game->map.full[new_y][new_x] = PLAYER;
 		game->movements++;
+		ft_print_movements(game);
 		ft_render_game(game);
 	}
 }

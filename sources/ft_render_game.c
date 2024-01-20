@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:59 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:33:29 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:42:40 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	ft_render_game(t_game *game)
 		}
 		y++;
 	}
-	ft_print_movements(game);
 	return (0);
 }
 
