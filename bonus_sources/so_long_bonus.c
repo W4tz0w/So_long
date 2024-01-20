@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:36 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:45:07 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/20 17:49:13 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ int	main(int argc, char	**argv)
 	ft_free_all_game(game);
 }
 
-/* Add 	system("leaks -atExit -- ./so_long_bonus") 
+/* Add 	system("leaks -atExit -- ./so_long_bonus"); 
 				on macOS too check for leaks */
 /* Or just 	system("leaks ./so_long") on Linux */
