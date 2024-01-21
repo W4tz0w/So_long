@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 16:06:57 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/21 23:30:17 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,7 @@ typedef struct s_game
 {
 	void		*mlx_ptr;
 	void		*win_ptr;
+	char		*buf;
 	int			movements;
 	int			p_sprite;
 	t_map		map;
