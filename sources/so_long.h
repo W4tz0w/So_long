@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/21 23:30:17 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/22 00:18:49 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SO_LONG_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include "../libraries/mlx/mlx.h"
 # include "../libraries/Libft/libft.h"
