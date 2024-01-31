@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:59 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:44:55 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 16:57:05 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,29 +40,27 @@ int	ft_render_game(t_game *game)
 
 void	ft_identify_sprite(t_game *game, int y, int x)
 {
-	char	parameter;
+	char	prm;
 
-	parameter = game->map.full[y][x];
-	if (parameter == WALL)
+	prm = game->map.full[y][x];
+	if (prm == WALL)
 		ft_render_sprite (game, game->wall, y, x);
-	else if (parameter == FLOOR)
+	else if (prm == FLOOR)
 		ft_render_sprite (game, game->floor, y, x);
-	else if (parameter == COIN_1)
-		ft_render_sprite (game, game->coins1, y, x);
-	else if (parameter == COIN_2)
-		ft_render_sprite (game, game->coins2, y, x);
-	else if (parameter == COIN_3)
-		ft_render_sprite (game, game->coins3, y, x);
-	else if (parameter == COIN_4)
-		ft_render_sprite (game, game->coins4, y, x);
-	else if (parameter == MAP_EXIT)
+	else if (prm == COIN_1 || prm == COIN_2 || prm == COIN_3 || prm == COIN_4)
+		ft_render_coins (game, y, x, prm);
+	else if (prm == MAP_EXIT)
 	{
 		if (game->map.coins == 0)
 			ft_render_sprite (game, game->open_exit, y, x);
 		else
 			ft_render_sprite (game, game->exit_closed, y, x);
 	}
-	else if (parameter == PLAYER)
+	else if (prm == ENEMY_1)
+		ft_render_sprite(game, game->enemy1, y, x);
+	else if (prm == ENEMY_2)
+		ft_render_sprite(game, game->enemy2, y, x);
+	else if (prm == PLAYER)
 		ft_render_player (game, y, x);
 }
 

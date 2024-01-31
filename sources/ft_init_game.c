@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:09 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/21 23:56:38 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 12:24:39 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	ft_init_vars(t_game *game)
 	game->map.exit = 0;
 	game->map.players = 0;
 	game->movements = 0;
-	game->map.columns = ft_strlen(game->map.full[0]) - 1;
-	game->p_sprite = RIGHT;
+	game->map.columns = ft_strlen(game->map.full[0]);
+	game->p_sprite = FRONT;
 }
 
 void	ft_init_mlx(t_game *game)

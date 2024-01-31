@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:36 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:49:13 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 14:12:13 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char	**argv)
 	ft_init_mlx(game);
 	ft_init_sprites(game);
 	ft_render_game(game);
+	system("leaks -atExit -- ./so_long_bonus");
 	mlx_hook(game->win_ptr, 2, 0, ft_key_hook, game);
 	mlx_hook(game->win_ptr, 17, 0, ft_quit_game, game);
 	mlx_hook(game->win_ptr, 12, 0, ft_render_game, game);

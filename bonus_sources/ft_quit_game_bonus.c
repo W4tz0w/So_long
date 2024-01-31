@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:12 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:44:52 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 14:50:49 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,15 @@ int	ft_error_msg(char *message, t_game *game)
 		ft_free_game(game);
 	free(game);
 	ft_printf(RED"Error\n"GREY"%s\n"RESET, message);
+	exit (EXIT_FAILURE);
+}
+
+int	ft_killed(t_game *game)
+{
+	if (game->map_alloc == true)
+		ft_free_game(game);
+	free(game);
+	ft_printf(RED"R.I.P\n"GREY"t'es mort en nullos\n"RESET);
+	ft_printf(CYAN"Movements: %d\n"RESET, game->movements);
 	exit (EXIT_FAILURE);
 }

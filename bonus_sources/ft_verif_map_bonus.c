@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:22 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/21 23:56:52 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 16:58:13 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	ft_verif_map(t_game *game)
 	ft_count_map_params(game);
 	ft_verify_map_params(game);
 	ft_convert_coins(game);
+	ft_convert_enemies(game);
 }
 
 void	ft_verif_rows(t_game *game)
@@ -71,7 +72,7 @@ void	ft_count_map_params(t_game *game)
 		x = 0;
 		while (x < game->map.columns)
 		{
-			if (!ft_strchr("CEP01", game->map.full[y][x]))
+			if (!ft_strchr("CEP01X", game->map.full[y][x]))
 				ft_error_msg("Pas d'impro! C,E,P,0,1. That's IT.", game);
 			else if (game->map.full[y][x] == PLAYER)
 			{

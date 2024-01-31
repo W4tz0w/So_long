@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:38 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/21 23:56:59 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 16:33:24 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ void	ft_sprite_path(t_game *game)
 	game->xpm.right_xpm = "assets/solal/player/right.xpm";
 	game->xpm.left_xpm = "assets/solal/player/left.xpm";
 	game->xpm.back_xpm = "assets/solal/player/back.xpm";
+	game->xpm.enemy1_xpm = "assets/solal/enemy1.xpm";
+	game->xpm.enemy2_xpm = "assets/solal/enemy2.xpm";
 	game->xpm.exit_open_xpm = "assets/solal/exit-open.xpm";
 	game->xpm.exit_closed_xpm = "assets/solal/exit-closed.xpm";
 }
@@ -46,6 +48,8 @@ void	ft_parallel_universe(t_game *game)
 	game->xpm.right_xpm = "assets/solal/player/back.xpm";
 	game->xpm.left_xpm = "assets/solal/exit-closed.xpm";
 	game->xpm.back_xpm = "assets/solal/wall.xpm";
+	game->xpm.enemy1_xpm = "assets/solal/enemy1.xpm";
+	game->xpm.enemy2_xpm = "assets/solal/enemy2.xpm";
 	game->xpm.exit_open_xpm = "assets/solal/exit-open.xpm";
 	game->xpm.exit_closed_xpm = "assets/solal/player/right.xpm";
 }
@@ -101,4 +105,8 @@ void	ft_convert_map(t_game *game, int y, int x, int i)
 		game->map.full[y][x] = COIN_3;
 	else if (game->map.full[y][x] == COINS && i == 4)
 		game->map.full[y][x] = COIN_4;
+	else if (game->map.full[y][x] == ENEMIES && i == 5)
+		game->map.full[y][x] = ENEMY_1;
+	else if (game->map.full[y][x] == ENEMIES && i == 6)
+		game->map.full[y][x] = ENEMY_2;
 }

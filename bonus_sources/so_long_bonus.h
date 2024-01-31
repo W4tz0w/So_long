@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/22 00:18:38 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 17:01:41 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@
 # define COIN_3 		 	'7'
 # define COIN_4 		 	'6'
 # define ALL_4_COINS		"6789"
+# define ENEMIES			'X'
+# define ALL_ENEMIES		"YZ"
+# define ENEMY_1			'Y'
+# define ENEMY_2			'Z'
 
 # define KEY_W				13
 # define KEY_A				0
@@ -98,6 +102,8 @@ typedef struct s_xpm
 	char	*right_xpm;
 	char	*left_xpm;
 	char	*back_xpm;
+	char	*enemy1_xpm;
+	char	*enemy2_xpm;
 	char	*exit_open_xpm;
 	char	*exit_closed_xpm;
 }	t_xpm;
@@ -124,6 +130,8 @@ typedef struct s_game
 	t_image		p_left;
 	t_image		p_right;
 	t_image		p_back;
+	t_image		enemy1;
+	t_image		enemy2;
 	t_xpm		xpm;
 }	t_game;
 
@@ -152,11 +160,14 @@ int		ft_key_hook(int keysym, t_game *game);
 void	ft_player_move(t_game *game, int x, int y, int p_sprite);
 int		ft_victory(t_game *game);
 int		ft_error_msg(char *message, t_game *game);
+int		ft_killed(t_game *game);
 int		ft_quit_game(t_game *game);
 void	ft_free_all_game(t_game *game);
 void	ft_destroy_images(t_game *game);
 void	ft_free_game(t_game *game);
 void	ft_sprite_path(t_game *game);
 void	ft_parallel_universe(t_game *game);
+void	ft_render_coins(t_game *game, int y, int x, char prm);
+void	ft_convert_enemies(t_game *game);
 
 #endif

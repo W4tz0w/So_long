@@ -6,7 +6,7 @@
 #    By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 17:28:03 by daddy_cool        #+#    #+#              #
-#    Updated: 2024/01/20 17:36:20 by daddy_cool       ###   ########.fr        #
+#    Updated: 2024/01/31 15:54:24 by daddy_cool       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ BONUS_SRCS = $(addprefix $(BONUS_SRCS_DIR), \
 		ft_init_game_bonus.c		\
 		ft_init_map_bonus.c		\
 		ft_render_game_bonus.c		\
+		ft_render_coins_bonus.c		\
 		ft_utils_bonus.c)
 
 OBJS = $(SRCS:%.c=%.o)
@@ -83,6 +84,12 @@ fclean: clean
 re: fclean all
 
 run:			${NAME}
-				./${NAME} assets/maps/valid/map2.ber
+				./${NAME} assets/maps/valid/enzo.ber
+
+runbonus:		${NAME}_bonus
+				./${NAME}_bonus assets/maps/valid/bonus/parallel_universe.ber
+
+enemies:		${NAME}_bonus
+				./${NAME}_bonus assets/maps/valid/bonus/map-bonus.ber
 
 .PHONY: all clean fclean re

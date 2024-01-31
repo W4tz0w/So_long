@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:54 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/21 23:58:52 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 14:52:42 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_init_map(t_game *game, char *argv)
 
 	map_fd = open(argv, O_RDONLY);
 	if (map_fd == -1 || (read(map_fd, &game->buf, 1) <= 0))
-			ft_error_msg("Je refuse d'ouvrir cette map, gamin.", game);
+		ft_error_msg("Je refuse d'ouvrir cette map, gamin.", game);
 	lseek(map_fd, 0, SEEK_SET);
 	map_temp = ft_strdup("");
 	game->map.rows = 0;

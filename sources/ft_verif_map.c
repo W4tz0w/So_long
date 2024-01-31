@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:22 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/20 17:02:37 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/30 16:33:02 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_verif_rows(t_game *game)
 	int	i;
 
 	i = 0;
+	printf("Nombre de columns : %d\n", game->map.columns);
 	while (i < game->map.rows)
 	{
 		if (game->map.full[i][0] != WALL)
