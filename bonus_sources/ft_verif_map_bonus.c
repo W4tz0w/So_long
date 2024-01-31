@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:22 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 16:58:13 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/01/31 17:47:02 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	ft_verif_rows(t_game *game)
 	while (i < game->map.rows)
 	{
 		if (game->map.full[i][0] != WALL)
-			ft_error_msg("Il manque un mur au premier rang.", game);
+			ft_error_msg("Le mur OUEST comporte une brèche.", game);
 		else if (game->map.full[i][game->map.columns - 1] != WALL)
 		{
-			ft_error_msg("Il manque un mur au dernier rang.", game);
+			ft_error_msg("Le mur EST comporte une brèche.", game);
 		}
 		i++;
 	}
@@ -54,9 +54,9 @@ void	ft_verif_columns(t_game *game)
 	while (i < game->map.columns)
 	{
 		if (game->map.full[0][i] != WALL)
-			ft_error_msg("Il manque un mur dans la première colonne.", game);
+			ft_error_msg("Le mur NORD comporte une brèche.", game);
 		else if (game->map.full[game->map.rows - 1][i] != WALL)
-			ft_error_msg("Il manque un mur dans la dernière colonne", game);
+			ft_error_msg("Le mur SUD comporte une brèche.", game);
 		i++;
 	}
 }
