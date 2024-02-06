@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:35:56 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/06 01:02:18 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/06 12:55:19 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,19 +96,22 @@ void	ft_render_enemies(t_game *game, int enemy_type, int line, int column)
 	t = enemy_type;
 	if (game->flag == 0)
 	{
-		if (game->map.full[y][x + 1] == FLOOR)
+		if (game->map.full[y][x + 1] == PLAYER || game->map.full[y][x - 1] == PLAYER || game->map.full[y + 1][x] == PLAYER || game->map.full[y - 1][x] == PLAYER)
 			mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
-			game->enemy2_1.xpm_ptr, column * game->enemy1_1.x, line * game->enemy1_1.y);
-		else if (game->map.full[y][x - 1] == FLOOR)
-		{
+			game->enemy1_1.xpm_ptr, column * game->enemy1_1.x, line * game->enemy1_1.y);
+		else if (game->map.full[y + 1][x + 1] == PLAYER || game->map.full[y - 1][x + 1] == PLAYER || game->map.full[y - 1][x - 1] == PLAYER || game->map.full[y + 1][x - 1] == PLAYER)
 			mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
-			game->enemy2_1.xpm_ptr, (column - 1) * game->enemy1_1.x, line * game->enemy1_1.y);
-			mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
-			game->floor.xpm_ptr, column * game->floor.x, line * game->floor.y);
-		}
+			game->enemy1_2.xpm_ptr, column * game->enemy1_1.x, line * game->enemy1_1.y);
+		// else if (game->map.full[y][x - 1] == FLOOR)
+		// {
+		// 	mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
+		// 	game->enemy2_1.xpm_ptr, (column - 1) * game->enemy1_1.x, line * game->enemy1_1.y);
+		// 	mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
+		// 	game->floor.xpm_ptr, column * game->floor.x, line * game->floor.y);
+		// }
 		else
 			mlx_put_image_to_window (game->mlx_ptr, game->win_ptr, \
-			game->enemy1_1.xpm_ptr, column * game->enemy2_1.x, line * game->enemy2_1.y);
+			game->enemy2_1.xpm_ptr, column * game->enemy2_1.x, line * game->enemy2_1.y);
 	}
 	else if (game->flag == 1)
 	{

@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:36 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/01 13:50:20 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/06 12:01:52 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(int argc, char	**argv)
 	ft_init_mlx(game);
 	ft_init_sprites(game);
 	ft_render_game(game);
-	mlx_loop_hook(game->mlx_ptr, (int (*)())ft_animation, game);
+	// mlx_loop_hook(game->mlx_ptr, (int (*)())ft_animation, game);
 	mlx_hook(game->win_ptr, 2, 0, ft_key_hook, game);
 	mlx_hook(game->win_ptr, 17, 0, ft_quit_game, game);
 	mlx_hook(game->win_ptr, 12, 0, ft_render_game, game);
