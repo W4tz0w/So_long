@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:22 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 17:47:02 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/05 16:13:17 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,8 @@ void	ft_count_map_params(t_game *game)
 				game->map.coins++;
 			else if (game->map.full[y][x] == MAP_EXIT)
 				game->map.exit++;
+			else if (game->map.full[y][x] == ENEMIES)
+				game->map.enemies++;
 			x++;
 		}
 		y++;

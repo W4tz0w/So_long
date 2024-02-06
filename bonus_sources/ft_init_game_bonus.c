@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:09 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 17:00:17 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/05 16:10:06 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_init_vars(t_game *game)
 {
 	game->map.coins = 0;
 	game->map.exit = 0;
+	game->map.enemies = 0;
 	game->map.players = 0;
 	game->movements = 0;
 	game->map.columns = ft_strlen(game->map.full[0]);
@@ -60,8 +61,10 @@ void	ft_init_sprites(t_game *game)
 	game->p_left = ft_new_sprite(mlx, game->xpm.left_xpm, game);
 	game->p_right = ft_new_sprite(mlx, game->xpm.right_xpm, game);
 	game->p_back = ft_new_sprite(mlx, game->xpm.back_xpm, game);
-	game->enemy1 = ft_new_sprite(mlx, game->xpm.enemy1_xpm, game);
-	game->enemy2 = ft_new_sprite(mlx, game->xpm.enemy2_xpm, game);
+	game->enemy1_1 = ft_new_sprite(mlx, game->xpm.enemy1_1_xpm, game);
+	game->enemy1_2 = ft_new_sprite(mlx, game->xpm.enemy1_2_xpm, game);
+	game->enemy2_1 = ft_new_sprite(mlx, game->xpm.enemy2_1_xpm, game);
+	game->enemy2_2 = ft_new_sprite(mlx, game->xpm.enemy2_2_xpm, game);
 	game->open_exit = ft_new_sprite(mlx, game->xpm.exit_open_xpm, game);
 	game->exit_closed = ft_new_sprite(mlx, game->xpm.exit_closed_xpm, game);
 }

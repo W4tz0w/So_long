@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:59 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 16:57:05 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/03 00:48:38 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void	ft_identify_sprite(t_game *game, int y, int x)
 			ft_render_sprite (game, game->exit_closed, y, x);
 	}
 	else if (prm == ENEMY_1)
-		ft_render_sprite(game, game->enemy1, y, x);
+		ft_render_enemies(game, 1, y, x);
 	else if (prm == ENEMY_2)
-		ft_render_sprite(game, game->enemy2, y, x);
+		ft_render_enemies(game, 2, y, x);
 	else if (prm == PLAYER)
 		ft_render_player (game, y, x);
 }

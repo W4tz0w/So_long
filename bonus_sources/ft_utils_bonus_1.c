@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_utils_bonus_1.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:38 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 16:33:24 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/03 01:07:49 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ void	ft_sprite_path(t_game *game)
 	game->xpm.right_xpm = "assets/solal/player/right.xpm";
 	game->xpm.left_xpm = "assets/solal/player/left.xpm";
 	game->xpm.back_xpm = "assets/solal/player/back.xpm";
-	game->xpm.enemy1_xpm = "assets/solal/enemy1.xpm";
-	game->xpm.enemy2_xpm = "assets/solal/enemy2.xpm";
+	game->xpm.enemy1_1_xpm = "assets/solal/enemy1_1.xpm";
+	game->xpm.enemy2_1_xpm = "assets/solal/enemy2_1.xpm";
+	game->xpm.enemy1_2_xpm = "assets/solal/enemy1_2.xpm";
+	game->xpm.enemy2_2_xpm = "assets/solal/enemy2_2.xpm";
 	game->xpm.exit_open_xpm = "assets/solal/exit-open.xpm";
 	game->xpm.exit_closed_xpm = "assets/solal/exit-closed.xpm";
 }
@@ -48,8 +50,10 @@ void	ft_parallel_universe(t_game *game)
 	game->xpm.right_xpm = "assets/solal/player/back.xpm";
 	game->xpm.left_xpm = "assets/solal/exit-closed.xpm";
 	game->xpm.back_xpm = "assets/solal/wall.xpm";
-	game->xpm.enemy1_xpm = "assets/solal/enemy1.xpm";
-	game->xpm.enemy2_xpm = "assets/solal/enemy2.xpm";
+	game->xpm.enemy1_1_xpm = "assets/solal/enemy1_1.xpm";
+	game->xpm.enemy1_2_xpm = "assets/solal/enemy1_2.xpm";
+	game->xpm.enemy2_1_xpm = "assets/solal/enemy2_1.xpm";
+	game->xpm.enemy2_2_xpm = "assets/solal/enemy2_2.xpm";
 	game->xpm.exit_open_xpm = "assets/solal/exit-open.xpm";
 	game->xpm.exit_closed_xpm = "assets/solal/player/right.xpm";
 }

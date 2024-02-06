@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 17:01:41 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/05 16:17:30 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@
 # define ALL_ENEMIES		"YZ"
 # define ENEMY_1			'Y'
 # define ENEMY_2			'Z'
+
+# define ANIMATION_SPEED	1420
 
 # define KEY_W				13
 # define KEY_A				0
@@ -86,6 +88,7 @@ typedef struct s_map
 	int			columns;
 	int			coins;
 	int			exit;
+	int			enemies;
 	int			players;
 	t_positon	player;
 }	t_map;
@@ -102,8 +105,10 @@ typedef struct s_xpm
 	char	*right_xpm;
 	char	*left_xpm;
 	char	*back_xpm;
-	char	*enemy1_xpm;
-	char	*enemy2_xpm;
+	char	*enemy1_1_xpm;
+	char	*enemy1_2_xpm;
+	char	*enemy2_1_xpm;
+	char	*enemy2_2_xpm;
 	char	*exit_open_xpm;
 	char	*exit_closed_xpm;
 }	t_xpm;
@@ -113,6 +118,7 @@ typedef struct s_game
 	void		*mlx_ptr;
 	void		*win_ptr;
 	char		*buf;
+	int			flag;
 	int			movements;
 	int			p_sprite;
 	int			parallel_uni;
@@ -130,8 +136,10 @@ typedef struct s_game
 	t_image		p_left;
 	t_image		p_right;
 	t_image		p_back;
-	t_image		enemy1;
-	t_image		enemy2;
+	t_image		enemy1_1;
+	t_image		enemy2_1;
+	t_image		enemy1_2;
+	t_image		enemy2_2;
 	t_xpm		xpm;
 }	t_game;
 
@@ -169,5 +177,8 @@ void	ft_sprite_path(t_game *game);
 void	ft_parallel_universe(t_game *game);
 void	ft_render_coins(t_game *game, int y, int x, char prm);
 void	ft_convert_enemies(t_game *game);
+void	ft_animation(void *param);
+int		animate_enemies(t_game *game, int flag);
+void	ft_render_enemies(t_game *game, int t, int y, int x);
 
 #endif
