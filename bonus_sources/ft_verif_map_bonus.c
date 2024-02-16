@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:29:22 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/05 16:13:17 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/16 18:54:05 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	ft_verif_map(t_game *game)
 	ft_count_map_params(game);
 	ft_verify_map_params(game);
 	ft_convert_coins(game);
-	ft_convert_enemies(game);
 }
 
 void	ft_verif_rows(t_game *game)
@@ -72,9 +71,7 @@ void	ft_count_map_params(t_game *game)
 		x = 0;
 		while (x < game->map.columns)
 		{
-			if (!ft_strchr("CEP01X", game->map.full[y][x]))
-				ft_error_msg("Pas d'impro! C,E,P,0,1. That's IT.", game);
-			else if (game->map.full[y][x] == PLAYER)
+			if (game->map.full[y][x] == PLAYER)
 			{
 				game->map.players++;
 				game->map.player.x = x;
@@ -94,6 +91,21 @@ void	ft_count_map_params(t_game *game)
 
 void	ft_verify_map_params(t_game *game)
 {
+	int	x;
+	int	y;
+
+	y = 0;
+	while (y < game->map.rows)
+	{
+		x = 0;
+		while (x < game->map.columns)
+		{
+			if (!ft_strchr("CEP01X", game->map.full[y][x]))
+				ft_error_msg("Pas d'impro! C,E,P,0,1, X. That's IT.", game);
+			x++;
+		}
+		y++;
+	}
 	if (game->map.coins == 0)
 		ft_error_msg("Oui. Mais avec les coins, c'est mieux.", game);
 	else if (game->map.exit == 0)

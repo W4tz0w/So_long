@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/05 16:17:30 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/16 19:20:42 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,9 +176,10 @@ void	ft_free_game(t_game *game);
 void	ft_sprite_path(t_game *game);
 void	ft_parallel_universe(t_game *game);
 void	ft_render_coins(t_game *game, int y, int x, char prm);
-void	ft_convert_enemies(t_game *game);
 void	ft_animation(void *param);
 int		animate_enemies(t_game *game, int flag);
-void	ft_render_enemies(t_game *game, int t, int y, int x);
+void	ft_render_enemies(t_game *game, int y, int x);
+int		ft_player_proximity_0(t_game *game, int y, int x);
+int		ft_player_proximity_1(t_game *game, int y, int x);
 
 #endif
