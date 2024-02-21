@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:24 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:38:46 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 22:53:11 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,10 @@ void	ft_destroy_images(t_game *game)
 	mlx_destroy_image(game->mlx_ptr, game->p_back.xpm_ptr);
 	mlx_destroy_image(game->mlx_ptr, game->exit_closed.xpm_ptr);
 	mlx_destroy_image(game->mlx_ptr, game->open_exit.xpm_ptr);
+	mlx_destroy_image(game->mlx_ptr, game->enemy1_1.xpm_ptr);
+	mlx_destroy_image(game->mlx_ptr, game->enemy1_2.xpm_ptr);
+	mlx_destroy_image(game->mlx_ptr, game->enemy2_1.xpm_ptr);
+	mlx_destroy_image(game->mlx_ptr, game->enemy2_2.xpm_ptr);
 }
 
 void	ft_free_game(t_game *game)

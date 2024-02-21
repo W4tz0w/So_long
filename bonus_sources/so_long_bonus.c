@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:36 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:39:57 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 23:50:12 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char	**argv)
 	game = malloc(sizeof(t_game));
 	ft_verif_args(argc, argv, game);
 	ft_init_map(game, argv[1]);
-	ft_init_vars(game);
+	ft_init_variables(game);
 	ft_verif_map(game);
 	ft_init_mlx(game);
 	ft_init_sprites(game);

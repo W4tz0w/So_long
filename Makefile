@@ -6,7 +6,7 @@
 #    By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/17 17:28:03 by daddy_cool        #+#    #+#              #
-#    Updated: 2024/02/01 02:37:15 by daddy_cool       ###   ########.fr        #
+#    Updated: 2024/02/21 23:18:04 by daddy_cool       ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ BONUS_SRCS = $(addprefix $(BONUS_SRCS_DIR), \
 		ft_init_game_bonus.c		\
 		ft_init_map_bonus.c		\
 		ft_render_game_bonus.c		\
-		ft_utils_bonus_2.c		\
-		ft_utils_bonus_1.c)
+		ft_utils_render_bonus.c		\
+		ft_utils_bonus.c)
 
 OBJS = $(SRCS:%.c=%.o)
 BONUS_OBJS = $(BONUS_SRCS:%.c=%.o)

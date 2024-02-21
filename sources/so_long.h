@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/22 00:18:49 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 23:05:07 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void	ft_verif_args(int argc, char **argv, t_game *game);
 void	ft_init_map(t_game *game, char *argv);
 char	*ft_sl_join(char **s1, const char *s2);
 void	ft_check_for_empty_line(char *map, t_game *game);
-void	ft_init_vars(t_game *game);
+void	ft_init_variables(t_game *game);
 void	ft_verif_map(t_game *game);
 void	ft_verif_rows(t_game *game);
 size_t	ft_strlen_line(const char *str);

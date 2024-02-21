@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:12 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:39:31 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 23:06:08 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	ft_victory(t_game *game);
 int	ft_quit_game(t_game *game);
 int	ft_error_msg(char *message, t_game *game);
+int	ft_killed(t_game *game);
 
 int	ft_victory(t_game *game)
 {

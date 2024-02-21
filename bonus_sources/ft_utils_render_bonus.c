@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 15:35:56 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:39:52 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 22:51:47 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	ft_render_coins(t_game *game, int y, int x, char prm);
 void	ft_render_enemies(t_game *game, int line, int column);
-int		ft_player_proximity(t_game *game);
+int		ft_player_proximity_0(t_game *game, int y, int x);
+int		ft_player_proximity_1(t_game *game, int y, int x);
 
 void	ft_render_coins(t_game *game, int y, int x, char prm)
 {

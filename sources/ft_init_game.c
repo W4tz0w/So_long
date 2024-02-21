@@ -6,18 +6,18 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:09 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/01/31 12:24:39 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 23:05:07 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_init_vars(t_game *game);
+void	ft_init_variables(t_game *game);
 void	ft_init_mlx(t_game *game);
 void	ft_init_sprites(t_game *game);
 t_image	ft_new_sprite(void *mlx, char *path, t_game *game);
 
-void	ft_init_vars(t_game *game)
+void	ft_init_variables(t_game *game)
 {
 	game->map.coins = 0;
 	game->map.exit = 0;
