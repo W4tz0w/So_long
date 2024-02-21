@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:30:31 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:39:21 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 13:22:31 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	ft_p_move(t_game *game, int new_y, int new_x, int p_sprite)
 		game->movements++;
 		ft_render_game(game);
 	}
-	else if ((game->map.full[new_y][new_x] == ENEMY_1)
-	|| (game->map.full[new_y][new_x] == ENEMY_2))
+	else if (game->map.full[new_y][new_x] == ENEMIES)
 		ft_killed(game);
 }

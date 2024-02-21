@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:31:09 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:39:00 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 12:57:41 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,20 @@ void	ft_init_vars(t_game *game)
 
 void	ft_init_mlx(t_game *game)
 {
+	int	t_width;
+	int	t_height;
+
+	t_width = game->map.columns * IMG_WIDTH;
+	t_height = game->map.rows * IMG_HEIGHT;
+	if (t_width > MAX_WIDTH || t_height > MAX_HEIGHT)
+		ft_error_msg("Réduit la voilure, moussaillon!", game);
 	game->mlx_ptr = mlx_init();
 	if (game->mlx_ptr == NULL)
 	{
 		free(game->mlx_ptr);
-		ft_error_msg("La création du pointeur \
-		'mlx_init' n'a pas marché!", game);
+		ft_error_msg("La création du ptr 'mlx_init' n'a pas marché!", game);
 	}
-	game->win_ptr = mlx_new_window(game->mlx_ptr, \
-	game->map.columns * IMG_WIDTH, game->map.rows * IMG_HEIGHT, "so_long");
+	game->win_ptr = mlx_new_window(game->mlx_ptr, t_width, t_height, "so_long");
 	if (game->win_ptr == NULL)
 	{
 		free(game->mlx_ptr);

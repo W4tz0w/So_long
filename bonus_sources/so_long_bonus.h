@@ -6,7 +6,7 @@
 /*   By: daddy_cool <daddy_cool@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 17:28:27 by daddy_cool        #+#    #+#             */
-/*   Updated: 2024/02/16 19:20:42 by daddy_cool       ###   ########.fr       */
+/*   Updated: 2024/02/21 13:12:07 by daddy_cool       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 # include "../libraries/mlx/mlx.h"
 # include "../libraries/Libft/libft.h"
 
-# define IMG_HEIGHT			32
 # define IMG_WIDTH			32
+# define IMG_HEIGHT			32
+# define MAX_WIDTH			1440
+# define MAX_HEIGHT			900
 
 # define WALL				'1'
 # define FLOOR 				'0'
